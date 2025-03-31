@@ -382,9 +382,7 @@ Se necesita un nivel inicial (se asumió nivel alto).
 - **Eje Y**: Nivel de voltaje (por ejemplo, +V / 0V)
 - El gráfico debe mostrar los cambios de nivel según las reglas de cada codificación.
 
-![image](https://github.com/user-attachments/assets/1b30f39a-b27c-4478-bcf8-1b813130eaad)
 
-    Es posible que la imagen sea erronea.
 
 ## Ejercicio 18
 
