@@ -44,6 +44,8 @@ Dado que se ven 16 puntos en cada grafica se puede inferir que la modulación es
 La grafica B se ve distorsionada debido posiblemente a interferencias o ruido.
 La C se ve mas distorsionada y con mayor dispersión lo que indicaria una degradación de señal
 
+![image](https://github.com/user-attachments/assets/72d4fbd9-5064-4aee-a365-8c7713d7b4f8)
+
 
 *Ejercicio 5*
 
