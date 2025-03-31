@@ -19,7 +19,9 @@ Dado que el ancho de banda calculado es dde 1.23MHz se podrían utilizar como me
 
 La relación señal a ruido se mide en dB en un ancho de banda es:
 
-$$𝑆𝑁𝑅 = 10 𝑙𝑜𝑔_10(𝑆𝑁𝑅) = 10^\frac{𝑆𝑁𝑅}{10} [dB]$$
+$$𝑆𝑁𝑅 = 10 \times 𝑙𝑜𝑔_{10}(𝑆𝑁𝑅) = 10^\frac{𝑆𝑁𝑅}{10} [dB]$$
+
+$$SNR = 10^\frac{15}{10} = 31,6$$
 
 
 La capacidad del canal se calcula con la ecuación de Shannon:  
