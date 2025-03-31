@@ -194,7 +194,7 @@ Calcular el resultado de un paquete de datos “1111011101010101” en un sistem
 El código Hamming(7,4) toma 4 bits de datos y genera 7 bits codificados (añade 3 bits de paridad).  
 1111 0111 0101 0101  
 
-Vamos a codificar cada bloque por separado. El código Hamming(7,4) organiza los bits así:
+Vamos a codificar cada bloque por separado. El código Hamming(7,4) organiza los bits así:  
 
 Posiciones: [p1, p2, d1, p3, d2, d3, d4]
 Donde:
@@ -203,11 +203,9 @@ Donde:
 - p3 = paridad de bits 4,5,6,7
 
 
-*Bloque 1*: 1111
-d1 = 1, d2 = 1, d3 = 1, d4 = 1
-
-Posiciones: [p1, p2, 1, p3, 1, 1, 1]
-
+1. *Bloque 1*: 1111  
+d1 = 1, d2 = 1, d3 = 1, d4 = 1  
+Posiciones: [p1, p2, 1, p3, 1, 1, 1]  
 Ahora calculamos:  
 p1 = paridad de (3,5,7) = paridad de (1,1,1) = 1  
 p2 = paridad de (3,6,7) = paridad de (1,1,1) = 1  
@@ -215,7 +213,7 @@ p3 = paridad de (5,6,7) = paridad de (1,1,1) = 1
 → Resultado: 1111111
 
 
-*Bloque 2*: 0111
+2. *Bloque 2*: 0111  
 d1 = 0, d2 = 1, d3 = 1, d4 = 1  
 [p1, p2, 0, p3, 1, 1, 1]  
 Cálculos:  
@@ -225,7 +223,7 @@ p3 = paridad(1,1,1) = 1
 → Resultado: 0001111 
 
 
-*Bloque 3*: 0101  
+3. *Bloque 3*: 0101   
 d1 = 0, d2 = 1, d3 = 0, d4 = 1  
 [p1, p2, 0, p3, 1, 0, 1]  
 Cálculos:  
@@ -235,7 +233,7 @@ Cálculos:
 → Resultado: 0101011  
 
 
-*Bloque 4*: 0101 → Igual que anterior  
+4. *Bloque 4*: 0101 → Igual que anterior  
 Resultado: 0101011  
 
 
