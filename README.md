@@ -23,3 +23,38 @@ $C = B * log_2(1 + SNR)$
 $C = 1 * 10^{12} * log_2(1 + 31,6) = 5.03 * 10^{3}Gbps$
 
 Pero dado que la transmision maxima de la fibra optica depende de la capacidad de los receptores opticos y de la modulacion, en este caso QPSK, la tasa real de transmision es diferente a la calculada por la formula de shannon.
+
+$100Gbaudios * 2bit/simbolo = 200Gbps = 0,2Tbps$
+
+
+*Ejercicio 3*
+
+Si en el sistema anterior se introduce un conector de fibra con un 20% de pérdidas, 
+responder a las siguientes cuestiones: 
+a) ¿Se verá afectada la tasa de transmisión máxima? 
+b) ¿Qué velocidad máxima se tendrá en la salida? 
+
+
+*Ejercicio 4*
+
+Indicar el tipo de modulación que se está utilizando y los problemas que plantea en los 
+casos b y c. 
+
+Dado que se ven 16 puntos en cada grafica se puede inferir que la modulación es la 16-QAM o 4 bits por simbolo. La grafica A es correcta sin ningun problema a diferencia de la B y la C.  
+La grafica B se ve distorsionada debido posiblemente a interferencias o ruido.
+La C se ve mas distorsionada y con mayor dispersión lo que indicaria una degradación de señal
+
+
+*Ejercicio 5*
+
+Sabiendo que se transmiten dos señales de forma simultánea y que se aplican dos 
+modulaciones diferentes: 
+a) Indicar qué dos modulaciones se están aplicando. 
+b) Recuperar la información de ambas señales. 
+
+a) Se pude ver una modulación de frecuencia o frequency shift keying y una de fase o fase shift keying.
+
+b)
+
+
+*Ejercicio 6*
