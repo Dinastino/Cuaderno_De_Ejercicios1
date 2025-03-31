@@ -15,9 +15,15 @@ Dado que el ancho de banda calculado es dde 1.23MHz se podrían utilizar como me
 ---
 ## *Ejericio 2*
 
-- ¿Cuál es la tasa de transmisión máxima en un canal óptico con fibra de ancho de banda de 1 THz y conversores optoeléctricos de 100 Gbaudios, si la relación SNR es de 15 dB y la modulación utilizada en los conversores es de 4 símbolos en cuadratura?
+- ¿Cuál es la tasa de transmisión máxima en un canal óptico con fibra de ancho de banda de 1 THz y conversores optoeléctricos de 100 Gbaudios, si la relación SNR es de 15 dB y la modulación utilizada en los conversores es de 4 símbolos en cuadratura?  
+
+La relación señal a ruido se mide en dB en un ancho de banda es:
+
+$$𝑆𝑁𝑅 = 10 𝑙𝑜𝑔_10(𝑆𝑁𝑅) = 10^\frac{𝑆𝑁𝑅}{10} [dB]$$
+
 
 La capacidad del canal se calcula con la ecuación de Shannon:  
+
 $$C = B * log_2(1 + SNR)$$
 
 $$C = 1 * 10^{12} * log_2(1 + 31,6) = 5.03 * 10^{3}Gbps$$
@@ -34,6 +40,13 @@ responder a las siguientes cuestiones:
 a) ¿Se verá afectada la tasa de transmisión máxima? 
 b) ¿Qué velocidad máxima se tendrá en la salida? 
 
+- **a)** El conector afecta desde un principio, aunque no modifique a la tasa maxima teórica(Shannon) ya que no afecta al SNR total si que afecta a la a la practica dado que el conector reduce la potencia afectando al SNR efectivo lo que afecta a la capacidad de transmisión.
+- **b)** Debido al 20% de perdidas si que se afecta a la potencia que afecta a la velocidad de salida:
+
+$$200 Gbaudios \times 0,8 = 180 Gbaudios$$
+
+Dado que tras las peridias solo se mantiene un 80% de la potencia.
+
 ---
 ## *Ejercicio 4*
 
@@ -47,6 +60,7 @@ Dado que se ven 16 puntos en cada grafica se puede inferir que la modulación es
 
 
 ![image](https://github.com/user-attachments/assets/72d4fbd9-5064-4aee-a365-8c7713d7b4f8)
+
 
 ---
 ## *Ejercicio 5*
@@ -66,6 +80,11 @@ En el caso de fase sería: 0 0 1 1 0 0 0 0 1 1 1 1 1 1 0 0 1 1.
 
 
 ![image](https://github.com/user-attachments/assets/dd4cac7d-0117-41c4-ad3a-f9f10cf2fbaa)
+
+Para dejar la relaciones entre bits y frecuencia o bits y fase:
+
+![image](https://github.com/user-attachments/assets/11c4961d-c49b-4e4b-9fa2-ceed1662c9a8)
+
 
 ---
 ## *Ejercicio 6*
@@ -88,7 +107,7 @@ El esquema muestra un sistema de transmisión óptica con multiplexación por di
   - Si es demultiplexor cada salida debería llevar solo una λ en lugar de todas juntas.
 
 ---
-## Ejercicio 7
+## *Ejercicio 7*
 
 Se considera una pila de protocolos de 4 capas. La capa 4 envía un bloque de 1 Kbyte. La capa 3 añade cabeceras de 256 bits y cada paquete es de 512 bytes. La capa 2 añade cabeceras de 512 bits y el campo de datos de las tramas son de 128 bytes. La capa 1 añade a cada 30 bytes de datos, 32 bits de comienzo, un byte de parada, y 16 bits de CRC. Dibujar todo el proceso de encapsulamiento del sistema transmisor y calcular la eficiencia del sistema.
 
@@ -142,7 +161,7 @@ Solo el 25.85% de los datos transmitidos son útiles; el resto corresponde a sob
 
 ---
 
-## Ejercicio 8
+## *Ejercicio 8*
 
 Un sistema satélite divide la información de la capa 3 en bloques de 1904 bits, a los que añade una cabecera de 64 bits. Si cada trama tarda en transmitirse 20 ms y la latencia del satélite es de 85 ms, ¿cuánto tiempo tardará en realizar la transmisión de 5 Mbytes de información? 
 
@@ -162,7 +181,7 @@ Un sistema satélite divide la información de la capa 3 en bloques de 1904 bits
 
 ---
 
-## Ejercicio 9
+## *Ejercicio 9*
 
 Calcular el resultado de un paquete de datos “1111011101010101” en un sistema de enlace de datos con las siguientes especificaciones: 
 - Secuencia de inicio de trama “010101010”. 
@@ -231,7 +250,7 @@ Trama final:
 
 
 ---
-## Ejercicio 10
+## *Ejercicio 10*
 
 Un fabricante indica que su sistema integra un CRC-8 con el siguiente polinomio generador: 𝐺𝐺(𝑥𝑥) = 𝑥𝑥8 + 𝑥𝑥7 + 𝑥𝑥2 + 1. Plantear los pasos que se deben realizar para calcular la trama resultante, considerando que el CRC se aplica al final de la trama 2 del ejercicio anterior. 
 
@@ -259,8 +278,8 @@ El residuo obtenido tras la operación de división con el generador `110000101`
 Uniendo la trama original de 37 bits con el CRC calculado se obtiene la **trama final de 45 bits**:
 010101010111111101100110100101010010101100000
 
-
-## Ejercicio 11
+---
+## *Ejercicio 11*
 
  ¿Cuántos errores pueden llegar a corregir la codificación H(15,11) y el CRC-32? 
 
@@ -284,7 +303,8 @@ Posiciones (1-indexadas):
 
 Si se siguiese ese criterio los datos utilies transmitidos = 0101101011. 
 
-## Ejercicio 13
+---
+## *Ejercicio 13*
 
 ¿A qué protocolo de la capa de enlace de datos corresponde el siguiente esquema temporal?
 
@@ -301,8 +321,8 @@ EL protocolo de la imagen correspondría al protocolo de **ventana corrediza** c
 2. Piggybacking:
     - En vez de enviar el ACK por separada se sube a *caballito* o *piggybacking* en la sguiente trama a enviar.
 
-
-## Ejercicio 14
+---
+## *Ejercicio 14*
 
 ¿Se puede aplicar el protocolo del ejercicio anterior en el siguiente escenario?
 
@@ -310,8 +330,8 @@ EL protocolo de la imagen correspondría al protocolo de **ventana corrediza** c
 
 ![image](https://github.com/user-attachments/assets/3bfefc08-20cd-405b-b652-ae5b476eefa0)
 
-
-## Ejercicio 15
+---
+## *Ejercicio 15*
 
 Dibujar un diagrama de ventana deslizante con un receptor con buffer para tres tramas y un transmisor que dispone de 5 tramas desordenadas que llegan en el orden 0, 3, 2, 4, 1.
 
@@ -325,7 +345,7 @@ Dibujar un diagrama de ventana deslizante con un receptor con buffer para tres t
 
 ---
 
-## Ejericio 16
+## *Ejericio 16*
 
  Un canal coaxial con FDM con una tasa de transmisión de 500 Mbits/s con una longitud media de trama de 1/𝜇𝜇 = 12584 bits y una tasa de llegada de trama 𝜆𝜆 = 20000 trama/s:  
 a) ¿Qué retardo tendrá?  
@@ -356,7 +376,7 @@ $$t_{\text{detección}} = 2 \times t_{\text{prop}} = 25\ \mu s$$
 
 ---
 
-## Ejercicio 17
+## *Ejercicio 17*
 
 Representar la trama “1111111101011010101011” con codificación Manchester y Manchester diferencial. Indicar las unidades y magnitudes en los ejes. 
 
@@ -383,7 +403,68 @@ Se necesita un nivel inicial (se asumió nivel alto).
 - El gráfico debe mostrar los cambios de nivel según las reglas de cada codificación.
 
 
+---
+## *Ejercicio 18*
 
-## Ejercicio 18
+Diseñar una red Bluetooth que pueda mantener 15 nodos esclavos activos de manera simultánea.
 
-Diseñar una red Bluetooth que pueda mantener 15 nodos esclavos activos de manera simultánea. 
+Dado que se necesita un maestro y 15 esclavos una red basica es incompatible por lo que se utilizaría una red principal y puentes en los que un nodo es a la vez un esclavo en una red y un maestro en otra
+
+Piconet A: Maestro A + Esclavos 1-5  
+Piconet B: Maestro B + Esclavos 6-10  
+Piconet C: Maestro C + Esclavos 11-15  
+
+Puente: Un nodo que actúa como esclavo en A y maestro en B (y/o C)
+Poniendo al maestro B y C como esclavos del mestro A se podria llegar a crear una red con 1 maestro y 15 esclavos
+
+---
+## *Ejercicio 19*
+
+Cuál será el rutado entre los siguientes switches si utilizan para su conexión un árbol de expansión con raíz B5.  
+
+![image](https://github.com/user-attachments/assets/c0544e2c-a522-4d2d-a00e-f99a798ca8b3)
+
+
+- B5 será el root bridge.
+- Los switches más cercanos a B5 (por costo) serán designated bridges en sus respectivos segmentos.
+- Cada switch elegirá su camino más corto hacia B5.
+
+Y un posible rutado podría ser:  
+- Las conexiones con el root/B5 serian:
+  - B3
+  - B4
+- Luego B1 se conectaria a traves de B3 y B2 se conectaría a traves de B4 completado el rutado y conectando todos los puntos a B5
+
+|Switch    | Camino hasta B5      |
+|----------|----------------------|
+| B1       | B1 -> B3 -> B5       |
+| B2       | B2 -> B4 -> B5       |
+| B3       | B3 -> B5             |
+| B4       | B4 -> B5             |
+
+
+---
+## *Ejercicio 20*
+
+Conociendo el rutado del ejercicio anterior, realizar de nuevo el árbol de expansión que se produciría si el switch B3 dejara de estar activo.
+
+![image](https://github.com/user-attachments/assets/07314116-677c-4ec3-b60a-1153ddcfcfc1)
+
+
+- Sabiendo que el B3 no funciona no se puede utilizar el rutado del ejercicio anterior aunque se mantiene el B5 siendo el root
+
+El retudo en este caso sería:
+- La connexión con el B5 solo reia el B4.
+- El B2 seguiria conectado al B4.
+- En este segundo caso el B1 se conectaria al B2 en vez de al B3
+
+Por lo que la tabla seria.
+
+|Switch    | Camino hasta B5      |
+|----------|----------------------|
+| B1       | B1 -> B2 -> B4 -> B5 |
+| B2       | B2 -> B4 -> B5       |
+| B4       | B4 -> B5             |
+
+
+
