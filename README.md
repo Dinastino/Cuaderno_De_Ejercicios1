@@ -144,9 +144,14 @@ $\text{Eficiencia} = \frac{\text{Datos Útiles}}{\text{Datos Totales}} \times 10
 $\text{Eficiencia} = \frac{1024}{3960} \times 100= 25.85\%$  
 La **eficiencia del sistema es del 25.85%**, lo que indica que el **74.15%** de los datos transmitidos corresponden a sobrecarga de cabeceras y control.
 
-## Proceso de Encapsulamiento y Eficiencia del Sistema
+## Proceso de Encapsulamiento
 
-
+|Capas |Tramas                                  |
+|------|----------------------------------------|
+|Capa 4| Bloque de 1024 bytes                   |
+|Capa 3| Cabecera de 32 bytes - 480 bytes datos capa 4 = (Trama maxima 512 bytes)| 
+|Capa 2| Cabecera 64 bytes - 64 bytes datos capa 3 = (Trama maxima 128 bytes)|
+|Capa 1| 4 Bytes de comienzo - 128 bytes datos capa 2 - 30 bytes datos - 1 Byte de parada - 2 bytes de CRC  = (Trama total 165 bytes)|
 
 
 
@@ -156,12 +161,6 @@ La **eficiencia del sistema es del 25.85%**, lo que indica que el **74.15%** de 
 - **Capa 2:** Añade cabeceras de 64 bytes. Cada paquete se divide en 8 tramas de 128 bytes.
 - **Capa 1:** Añade 4 bytes de inicio, 1 byte de parada y 2 bytes de CRC por cada 30 bytes de datos.
 
-### Cálculo de Eficiencia
-
-
-$$\text{Eficiencia} = \frac{1024}{3960} \times 100 = 25.85\%$$
-
-Solo el 25.85% de los datos transmitidos son útiles; el resto corresponde a sobrecarga de cabeceras y control.
 
 ---
 
@@ -286,7 +285,7 @@ Uniendo la trama original de 37 bits con el CRC calculado se obtiene la **trama 
  ¿Cuántos errores pueden llegar a corregir la codificación H(15,11) y el CRC-32? 
 
  - *Hamming*:  
-El codigo de hamming es capaz de detectar errores a *d + 1* y corregir errores a *2d + 1* dado que el hamming proporcionado H(15,11) que nos da una distancia o *d* de 3 por lo que se pueden detectar dos errores y corregir uno.
+El codigo de hamming es capaz de detectar errores a *d + 1* y corregir errores a *2d + 1* dado que el hamming proporcionado H(15,11) que nos da una distancia o *d* de 2 por lo que se pueden detectar dos errores y corregir uno.
 - *CRC-32*:  
 El CRC por si mismo no puede corregir errores dado que unicamente los detecta, con mucha exactitud y robustez pero solo detecta, por lo que la respuesta es que con CRC-32 se pueden corregir cero errores.
 
